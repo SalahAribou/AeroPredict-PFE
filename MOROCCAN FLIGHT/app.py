@@ -910,47 +910,45 @@ section[data-testid="stSidebar"]           { background: var(--bg-surface) !impo
     border-bottom: 1px solid rgba(29,114,255,0.2);
 }
 
-/* ── Streamlit widget overrides ───────────────────────────────────────────── */
-.stSelectbox label,
-.stDateInput label,
-.stTimeInput label {
-    font-family: var(--font-mono) !important;
-    font-size: 0.65rem !important;
-    letter-spacing: 0.10em !important;
-    color: var(--text-muted) !important;
-    text-transform: uppercase !important;
-    font-weight: 400 !important;
-    margin-bottom: 0.25rem !important;
-}
-.stSelectbox [data-baseweb="select"] > div:first-child {
-    background: var(--bg-input) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    transition: border-color 0.2s, box-shadow 0.2s !important;
-}
-.stSelectbox [data-baseweb="select"] > div:first-child:hover,
-.stSelectbox [data-baseweb="select"] > div:first-child:focus-within {
-    border-color: var(--border-glow) !important;
-    box-shadow: 0 0 0 3px var(--accent-glow) !important;
-}
-.stSelectbox [data-baseweb="select"] span {
-    color: var(--text-primary) !important;
-    font-family: var(--font-body) !important;
-    font-size: 0.87rem !important;
-}
+/* ── Streamlit widget overrides (CLEAN DARK MODE) ────────────────────────── */
+
+/* 1. Main Input Boxes (Select, Date, Time) */
+.stSelectbox [data-baseweb="select"] > div:first-child,
 .stDateInput input,
 .stTimeInput input {
-    background: var(--bg-input) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    color: var(--text-primary) !important;
-    font-family: var(--font-mono) !important;
-    font-size: 0.9rem !important;
+    background-color: #111D30 !important; /* Dark Blue */
+    border: 1px solid #1E3A5F !important; /* Subtle border */
+    color: #FFFFFF !important;            /* White text */
+    -webkit-text-fill-color: #FFFFFF !important;
 }
-.stDateInput input:focus,
-.stTimeInput input:focus {
-    border-color: var(--border-glow) !important;
-    box-shadow: 0 0 0 3px var(--accent-glow) !important;
+
+/* 2. The selected text inside the dropdowns */
+.stSelectbox [data-baseweb="select"] span {
+    color: #FFFFFF !important; 
+}
+
+/* 3. The pop-up dropdown list container */
+[data-baseweb="popover"] ul {
+    background-color: #111D30 !important;
+    border: 1px solid #1E3A5F !important;
+}
+
+/* 4. The text for the items inside the dropdown list */
+[data-baseweb="popover"] ul li {
+    color: #E8EDF5 !important; 
+    background-color: transparent !important;
+}
+
+/* 5. The highlight when you hover over a dropdown item */
+[data-baseweb="popover"] ul li:hover {
+    background-color: #1A6BFF !important; /* Aviation Blue */
+    color: #FFFFFF !important;
+}
+
+/* 6. Keep labels visible */
+.stSelectbox label p, .stDateInput label p, .stTimeInput label p {
+    color: #7A93B8 !important;
+    font-weight: 600 !important;
 }
 
 /* Primary button */
